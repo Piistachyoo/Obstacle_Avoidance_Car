@@ -39,7 +39,13 @@ void DC_MOTOR_Turn_Off(const dc_motor_t *_MOTOR){
 	}
 }
 
-void DC_MOTOR_Turn_On(const dc_motor_t *_MOTOR){
-	DC_MOTOR_Turn_Right(_MOTOR);
+void DC_MOTOR_Turn_On(const dc_motor_t *_MOTOR, motor_direction_t _direction){
+	if(motor_direction_right == _direction){
+		DC_MOTOR_Turn_Right(_MOTOR);
+	}
+	else if(motor_direction_left == _direction){
+		DC_MOTOR_Turn_Left(_MOTOR);
+	}
+	else{ /* Do Nothing */ }
 	DIO_vSetPinValue(_MOTOR->motor_port, _MOTOR->motor_en_pin, HIGH);
 }
