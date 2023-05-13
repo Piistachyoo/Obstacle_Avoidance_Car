@@ -10,11 +10,13 @@
 #include "CFG_interface.h"
 
 static u8 remaining_seconds = 5;
-extern motor_direction_t Current_Motor_Direction;
+extern motor_direction_t Configured_Motor_Direction;
 extern PB_cfg myPB;
 extern LCD_4bit_cfg myLCD;
 extern TMR_cfg_t myTimer2;
+extern volatile u8 Timer2_Flag;
 
+/* A function that is called to set the default rotation for the car when stuck */
 void CFG_Direction(){
 	u8 Button_State = 99;
 	LCD_4bit_vSendString_pos(&myLCD, (u8*)"Set Def. Rot.", ROW1, 3);
@@ -26,13 +28,13 @@ void CFG_Direction(){
 	while(5 != Timer2_Flag){
 		PBD_vGetButtonState(&myPB, &Button_State);
 		if(BUTTON_PRESSED == Button_State){
-			if(motor_direction_right == Current_Motor_Direction){
-				Current_Motor_Direction = motor_direction_left;
+			if(motor_direction_right == Configured_Motor_Direction){
+				Configured_Motor_Direction = motor_direction_left;
 				LCD_4bit_vSendString_pos(&myLCD, (u8*)"     ", ROW2, 6);
 				LCD_4bit_vSendString_pos(&myLCD, (u8*)"Left", ROW2, 6);
 			}
-			else if(motor_direction_left == Current_Motor_Direction){
-				Current_Motor_Direction = motor_direction_right;
+			else if(motor_direction_left == Configured_Motor_Direction){
+				Configured_Motor_Direction = motor_direction_right;
 				LCD_4bit_vSendString_pos(&myLCD, (u8*)"     ", ROW2, 6);
 				LCD_4bit_vSendString_pos(&myLCD, (u8*)"Right", ROW2, 6);
 			}

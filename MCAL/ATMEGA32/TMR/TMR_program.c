@@ -384,6 +384,15 @@ void TMR_vSetCallback(const TMR_cfg_t *TMR, void (*ptr_func)(void)){
 }
 }
 
+/* Timer 0 OVF ISR */
+void __vector_11(void) __attribute__ ((signal));
+void __vector_11(void){
+	/* Execute ISR */
+	if(TMR0_Callback){
+		TMR0_Callback();
+	}
+}
+
 /* Timer 2 OVF ISR */
 void __vector_5(void) __attribute__ ((signal));
 void __vector_5(void){

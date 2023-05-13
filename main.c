@@ -1,6 +1,6 @@
 /*************************************************************************/
 /* Author        : Omar Yamany                                    		 */
-/* Project		 : Obstacle_Avoidance_Car									 */
+/* Project		 : Obstacle_Avoidance_Car								 */
 /* File          : main.c                                  	    		 */
 /* Date          : May 13, 2023	                                         */
 /* Version       : V1                                                    */
@@ -8,6 +8,8 @@
 /*************************************************************************/
 
 #include "APP/app.h"
+
+
 
 int main(){
 	app_init();

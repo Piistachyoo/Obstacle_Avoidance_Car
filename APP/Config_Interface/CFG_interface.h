@@ -13,13 +13,9 @@
 /* Section : Includes */
 #include "../app.h"
 
-/* Section : Macro Declarations */
-
-/* Section : Macro Functions Declarations */
-
-/* Section : Data Type Declarations */
-
 /* Section : Function Declarations */
+
+/* A function that is called to set the default rotation for the car when stuck */
 void CFG_Direction();
 
 #endif /* APP_CONFIG_INTERFACE_CFG_INTERFACE_H_ */
