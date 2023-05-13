@@ -17,7 +17,12 @@
 - If the distance is between 20cm and 30cm, the car rotates 90 degrees to left/right, based on the default direction chosen by user at the start of the application, if the distance is still between 20cm and 30cm, the car will keep rotating until it finds a passable route
 - If the distance is lower than 20cm, the car moves backward at 30% speed until the distance is more than 20cm, then it takes a decision based on that distance.
 
- 
+ #### LCD Interface:
+ ![LCD.png](https://github.com/Piistachyoo/Obstacle_Avoidance_Car/blob/main/LCD.png?raw=true)
+
+ - **Speed**: Speed of the rotating motors (**0%** - **100%**)
+ - **Dir**: Direction of the car (**F**orward - **B**ackward - **R**otating - **S**topped)
+ - **Dist**: Distance measured by the ultrasonic sensor (**3cm** - **400cm**)
 
 ## Project Design:
 ### The project is based on Layered Architecture and operates on a Super Loop.
