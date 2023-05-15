@@ -1,5 +1,9 @@
 
+
 # Obstacle Avoidance Car - ATMEGA32
+#### A car that detects obstacles ahead of it and tries to avoid hitting them
+
+[Obstacle Avoidance Car (ATmega32 Proteus Simulation) - YouTube](https://www.youtube.com/watch?v=qatJDsOZP04&list=PLC3Wwc_IeCN8d-kV1xPaiXWGpabYQGxY_&index=8)
 
 ![Arduino 4x4 car](https://botland.store/blog/wp-content/uploads/2022/07/robot-arduino-rc.jpg)
 
